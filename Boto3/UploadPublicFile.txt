@@ -1,0 +1,10 @@
+# Upload the final_report.csv to gid-staging bucket
+s3.upload_file(
+  # Complete the filename
+  Filename='./final_report.csv', 
+  # Set the key and bucket
+  Key='2019/final_report_2019_02_20.csv', 
+  Bucket='gid-staging',
+  # During upload, set ACL to public-read
+  ExtraArgs = {
+    'ACL': 'public-read'})
