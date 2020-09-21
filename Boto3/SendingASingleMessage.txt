@@ -1,0 +1,12 @@
+# Loop through every row in contacts
+for idx, row in contacts.iterrows():
+    
+    # Publish an ad-hoc sms to the user's phone number
+    response = sns.publish(
+        # Set the phone number
+        PhoneNumber = str(row['Phone']),
+        # The message should include the user's name
+        Message = 'Hello {}'.format(row['Name'])
+    )
+   
+    print(response)
