@@ -1,0 +1,13 @@
+# Create an empty counter variable
+cats_count = 0
+# Iterate over the labels in the response
+for label in response['Labels']:
+    # Find the cat label, look over the detected instances
+    if label['Name'] == 'Cat':
+        for instance in label['Instances']:
+            print(instance)
+            # Only count instances with confidence > 85
+            if (instance['Confidence'] > 85):
+                cats_count += 1
+# Print count of cats
+print(cats_count)
